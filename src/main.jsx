@@ -5,8 +5,27 @@ import {
   createBrowserRouter,
   RouterProvider,
 } from "react-router-dom";
+import Home from './components/Home/Home';
+import Main from './components/Layout/Main';
+import OrderReview from './components/OrderReview/OrderReview';
 
-const router = createBrowserRouter([]);
+const router = createBrowserRouter([
+  {
+    path: '/',
+    element: <Main />,
+    children: [
+      {
+        path: '/',
+        element: <Home />
+      },
+      {
+        path: 'review',
+        element: <OrderReview />
+      },
+      {}
+    ]
+  }
+]);
 
 
 ReactDOM.createRoot(document.getElementById('root')).render(
