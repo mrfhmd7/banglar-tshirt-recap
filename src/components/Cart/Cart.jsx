@@ -16,6 +16,10 @@ const Cart = ({ cart, handleRemoveFromCart }) => {
      return (
           <div>
                <h2>Order summary: {cart.length}</h2>
+               { cart.length < 3
+                    ? <span>forkir</span>
+                    : <span>Keep buying</span>
+               }
                {message}
                {
                     cart.map(tshirt => <p
@@ -26,6 +30,12 @@ const Cart = ({ cart, handleRemoveFromCart }) => {
                          >X</button>
                     </p>
                     )
+               }
+               {
+                    cart.length === 2 && <p>Double bonanza!!!</p>
+               }
+               {
+                    cart.length === 3 || <p>It is not triple</p>
                }
           </div>
      );
