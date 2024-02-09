@@ -1,10 +1,11 @@
 import React from 'react';
+import './Cart.css'
 
 const Cart = ({ cart, handleRemoveFromCart }) => {
 
      let message;
      if (cart.length === 0) {
-          message = <p>Please add some product.
+          message = <p className='bold'>Please add some product.
           </p>
      }
      else {
@@ -15,7 +16,8 @@ const Cart = ({ cart, handleRemoveFromCart }) => {
      }
      return (
           <div>
-               <h2>Order summary: {cart.length}</h2>
+               <h2 className={cart.length === 1 ? 'blue' : 'orange'}>Order summary: {cart.length}</h2>
+               <p className={`bold ${cart.length === 3 ? 'yellow-green' : 'sky-blue'}`}>Conditional CSS</p>
                { cart.length < 3
                     ? <span>forkir</span>
                     : <span>Keep buying</span>
@@ -32,10 +34,10 @@ const Cart = ({ cart, handleRemoveFromCart }) => {
                     )
                }
                {
-                    cart.length === 2 && <p>Double bonanza!!!</p>
+                    cart.length === 2 && <p className={'bold yellow-green'}>Double bonanza!!!</p>
                }
                {
-                    cart.length === 3 || <p>It is not triple</p>
+                    cart.length === 3 || <p className={'bold orange'}>It is not triple</p>
                }
           </div>
      );
