@@ -7,7 +7,7 @@ const Aunty = () => {
                <h2>Aunty</h2>
                <section className='flex'>
                     <Cousin>Abir</Cousin>
-                    <Cousin>Nibir</Cousin>
+                    <Cousin hasFriend={true}>Nibir</Cousin>
                </section>
           </div>
      );
