@@ -4,7 +4,6 @@ const Friend = () => {
      return (
           <div>
                <h2>Friend</h2>
-               <p>yes</p>
           </div>
      );
 };
